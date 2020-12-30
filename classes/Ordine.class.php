@@ -1,21 +1,25 @@
 <?php
 
+
+
 class Ordine {
 
     private int $numeroOrdine;
     private string $dataOra;
-    private int $numeroTavolo;
+    private Tavolo $tavolo;
     private string $nominativo;
     private int $numeriCoperti;
     private array $menuTotale;
+    private string $note;
 
-    public function __construct(int $numeroOrdine, string $dataOra, int $numeroTavolo, string $nominativo, int $numeriCoperti, array $menuTotale) {
+    public function __construct(int $numeroOrdine, string $dataOra, int $numeroTavolo, string $nominativo, int $numeriCoperti, array $menuTotale, string $note = null) {
         $this->numeroOrdine = $numeroOrdine;
         $this->dataOra = $dataOra;
         $this->numeroTavolo = $numeroTavolo;
         $this->nominativo = $nominativo;
         $this->numeriCoperti = $numeriCoperti;
         $this->menuTotale = $menuTotale;
+        $this->note = $note;
     }
 
     public function getNumeroOrdine(): int {
